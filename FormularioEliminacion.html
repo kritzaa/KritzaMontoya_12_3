@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eliminar Usuario</title>
+	<script>
+		function msgeliminar(){
+			return confirm("En serio deseas eliminar el usuario de la base de datos?");
+		}
+	</script>
+</head>
+<body>
+<div class="f1">
+	<form method="POST" action="Eliminacion.php">
+		<fieldset>
+			<legend>Eliminar datos de usuario</legend>
+			
+			<div class="control">
+				<label for="id">Por ID:</label>
+				<input type="number" name="id" required placeholder="Código de usuario">
+			</div>
+			<div class="boton">
+				<button type="submit"> <i class="fas fa-trash"></i> Eliminar </button>	
+			</div>
+		</fieldset>
+	</form>
+</div>
+<div class="mensaje">
+	<?php
+		//obtenemos el valor del parametro
+		if (isset ($_GET['parametro'])) {
+			echo htmlspecialchars($_GET['parametro']);
+			}
+		?>
+</div>
+</body>
+</html>
